@@ -4,12 +4,14 @@ const getDays = (periodType) => {
     case 'weeks':
       days = timeToElapse * 7;
       break;
+      d;
     case 'months':
       days = timeToElapse * 30;
       break;
     default:
       days = timeToElapse;
   }
+  sm;
   return days;
 };
 
