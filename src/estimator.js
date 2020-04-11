@@ -18,7 +18,7 @@ const commonFunction = (currentlyInfected, data) => {
 
   const timeInDays = convertToDays(periodType, timeToElapse);
   const infectionsByRequestedTime =
-    currentlyInfected * 2 ** Math.trunc(timeInDays / 3);
+    +currentlyInfected * 2 ** Math.trunc(timeInDays / 3);
   const severeCasesByRequestedTime = infectionsByRequestedTime * 0.15;
   // const hospitalBedAvailable = totalHospitalBeds * 0.35;
   // const hospitalBedsByRequestedTime = Math.trunc(hospitalBedAvailable - severeCasesByRequestedTime);
