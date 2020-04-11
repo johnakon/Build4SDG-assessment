@@ -2,14 +2,31 @@ const covid19ImpactEstimator = (data) => {
   const impact = {};
   const severImpact = {};
   let days;
-  if (data.periodType === 'days') {
-    days = data.timeToElapse;
-  } else if (data.periodType === 'weeks') {
-    days = data.timeToElapse * 7;
+
+
+
+  if (periodType === 'days') {
+    days = timeToElapse;
+  } else if (periodType === 'weeks') {
+    days = timeToElapse * 7;
   }
   if (data.periodType === 'months') {
-    days = data.timeToElapse * 30;
+    days = timeToElapse * 30;
   }
+
+
+//   switch (periodType) {
+//     case 'months':
+//       timeInDays = timeToElapse * 30;
+//       break;
+//     case 'weeks':
+//       timeInDays = timeToElapse * 7;
+//       break;
+//     default:
+//       timeInDays = timeToElapse;
+//   }
+//   return timeInDays;
+// };
 
   impact.currentlyInfected = data.reportedCases * 10;
   severImpact.currentlyInfected = data.reportedCases * 50;
