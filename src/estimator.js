@@ -19,7 +19,13 @@ const covid19ImpactEstimator = (data) => {
   severImpact.infectionsByRequestedTime = Math.trunc(
     severImpact.currentlyInfected * 2 ** value
   );
-  const computations = { data, impact, severImpact };
-  return computations;
+
+  return {
+    data,
+    estimator: {
+      impact: {},
+      severImpact: {}
+    }
+  };
 };
 export default covid19ImpactEstimator;
